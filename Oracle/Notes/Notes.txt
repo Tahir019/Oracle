@@ -1,0 +1,227 @@
+16/03/2025
+---------------
+
+SQL (Structure Query Language)
+=======================
+
+-> SQL is a db language which was introduced by "IBM". & It is used to communicate with database.
+-> The initial name is "SEQUEL" later renamed as "SQL".
+-> SQL is not case sensitive language that means we can write sql queries in either upper case or lower case or combination of upper & lower cases.
+
+	Ex : 
+		SELECT * FROM EMPLOYEE; --- executed
+		select * from emp; ----- executed
+		SeLecT * From Emp; -----executed
+	- every sql query should ends with ";" semicolon.
+
+
+Sub languages of SQL :
+===============
+1. Data Definition Language (DDL) :
+=========================
+	- create
+	- alter
+		> alter - modify
+		> alter - add
+		> alter - rename
+		> alter - drop
+	- rename 
+	- truncate
+	- drop
+
+New Features in DDL :
+------------------------------
+	- recyclebin
+	- flashback
+	- purge
+
+2. Data Manipulation Language (DML) :
+===========================
+	- insert
+	- update
+	- delete
+
+New Features in DML :
+------------------------------
+	- insert all
+	- merge
+
+3. Data Query / Retrieval Language (DQL / DRL) :
+==================================
+	- select
+
+4. Transaction Control Language (TCL) :
+============================
+	- commit
+	- rollback
+	- savepoint
+
+5. Data Control Language (DCL) :
+========================
+	- grant 
+	- revoke
+
+------------------------------------------------------------------------------------------------------------------
+DDL :
+=====
+
+create :
+----------
+	- is used to create a new db object such as tables, views, synonyms, sequences, procedure, functions, ......etc
+
+syntax for creating a new table in oracle :
+----------------------------------------------------
+syntax :
+----------
+create table <table name>( 
+<column name1> <datatype>[size],
+<column name2> <datatype>[size],
+.........................................................
+.......................................................); (in a single table = 1000 columns).
+
+Ex :
+ create table students ( stId ........)
+
+		sqlserver				oracle
+		======				====
+		varchar (max)			error
+		money				error
+		error				varchar2
+		error				long
+
+
+Datatypes in Oracle :
+===============
+	- It is an attribute to specify what type of data/value is storing into a column.
+	- Oracle supporting the following datatype -
+		> Numeric datatype
+		> Character / String Datatype
+		> Long Datatype
+		> Date datatypes
+		> Raw & Long Raw datatypes
+		> LOB datatypes (large object datatypes)
+
+>Numeric datatypes :
+---------------------------
+	i) int
+	ii) number (p, s)
+
+i) int :
+--------
+	- storing integer format values only.
+	Ex : 
+		SNO int ---------------> SNO number (38)
+				SNO number (4)	SNO number (5)
+				===========		============
+				0				99999
+				12				100000 - error
+				121
+				9999
+				10000 - error
+
+ii) number (p, s) :
+-----------------------
+	- storing integer and also float values.
+		> to store integer values : number (p)
+		> to store float values : number (p, s)
+
+p (precision)
+-----------------
+	- counting all digits including left & right digits of decimal expression.
+	Ex : 
+		56.25
+		precision = 4
+		
+		8734.45
+		precision = 6
+
+		098797.134
+		precision = 8
+
+S (scale)
+-----------
+	- counting the right side digit only.
+	Ex : 
+		56.25
+		scale = 2
+		precision = 4
+	
+		09797896.6534
+		scale = 4
+		precision = 11
+
+Ex : 
+		price number (6, 2)
+	=======================
+	0.0 ---------------------- 9999.99
+	10000.00 ----> error (limit exceed) -> price number (7,2)
+
+
+> String datatypes / Character datatypes :
+-----------------------------------------------------
+	- storing string format data only.
+	- string can be represent with '<string>'.
+
+Ex : 
+	Name char (10)
+	===========
+smith ------> error
+'smith' ------> allowed
+123 -------> error
+'123' ------> allowed
+
+				    String Format Data
+					        ||
+			
+			character only		alphanumeric string
+			string data			data
+				|				     |
+			(a-z / A-Z)			( a-z / A-Z, 0-9, @,#,$,%,&,_,.. etc)
+
+		Ex: 'smith', 'SMITH'		Ex: pan no, mailid, password, ....'sai12@gmail.com,.... etc.
+
+
+- string datatypes are again classified into two types :
+	1. Non-Unicode datatypes
+		> are storing "localized data". (i.e. English lang. only)
+			i) char (size)
+			ii) varchar2 (size)
+
+	2. Unicode datatypes	
+		> are storing "globalized data" (i.e. all national languages)
+			i) Nchar (size)
+			ii) Nvarchar (size)
+		Here, "N" is ------- national language.	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
